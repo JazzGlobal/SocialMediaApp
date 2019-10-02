@@ -47,6 +47,12 @@ app.get('/home', (req, res) => {
 // TODO: Implement tweeting (back-end)
 // TODO: Implement profile browsing (back-end)
 
+//TEST ROUTES
+
+app.get('/fweet', (req, res) => {
+    res.render('fweet');
+});
+
 // AUTH ROUTES
 
 app.get('/logout', (req, res) => {
