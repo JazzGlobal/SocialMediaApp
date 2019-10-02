@@ -44,6 +44,10 @@ app.get('/home', (req, res) => {
 
 // AUTH ROUTES
 
+app.get('/login', (req, res) => {
+    return res.render('login')
+});
+
 app.get('/signup', (req, res) => {
     if(req.user == null){
         return res.render('register');
