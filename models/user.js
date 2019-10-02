@@ -6,5 +6,6 @@ var mongoose = require('mongoose'),
             type: String,
             unique: true,
             required: true
-        }
+        },
+        password: String
     })
