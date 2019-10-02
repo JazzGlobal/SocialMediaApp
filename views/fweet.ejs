@@ -1,0 +1,23 @@
+<% include ./partials/header%>
+
+<form action="/fweet" method="POST">
+    <div class="container">
+        <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Text input" value="bulma">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Textarea"></textarea>
+            </div>
+          </div>
+          <div class="control">
+            <button class="button is-link">Fweet</button>
+          </div>    
+        </div>
+</form>
+
+<% include ./partials/footer%>
