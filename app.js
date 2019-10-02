@@ -2,8 +2,14 @@ var express = require('express'),
     app = express()
 
 app.get('/', (req, res) => {
-    res.render('home.ejs')
+    res.redirect('/home');
 })
+
+app.get('/home', (req, res) => {
+    res.render('home.ejs')
+});
+
+
 
 try {
     var PORT = env.PORT
