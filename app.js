@@ -42,6 +42,11 @@ app.get('/home', (req, res) => {
 });
 
 
+// TODO: Build profiles using new EJS file (front-end only)
+// TODO: Build tweet screen using new EJS file (front-end only)
+// TODO: Implement tweeting (back-end)
+// TODO: Implement profile browsing (back-end)
+
 // AUTH ROUTES
 
 app.get('/logout', (req, res) => {
