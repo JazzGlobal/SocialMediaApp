@@ -2,7 +2,7 @@ var express = require('express'),
     app = express()
 
 app.get('/', (req, res) => {
-    res.send('Home')
+    res.render('home.ejs')
 })
 
 try {
