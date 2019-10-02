@@ -38,15 +38,26 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-    res.render('home')
+    res.render('home', {user: req.user});
 });
 
 
 // AUTH ROUTES
 
-app.get('/login', (req, res) => {
-    return res.render('login')
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
 });
+
+app.get('/login', (req, res) => {
+    return res.render('login');
+});
+
+
+app.post('/login', passport.authenticate('local',{successRedirect: "/", failureRedirect: "/failed"}),
+  function(req, res){
+});
+
 
 app.get('/signup', (req, res) => {
     if(req.user == null){
