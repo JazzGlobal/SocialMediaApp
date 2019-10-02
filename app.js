@@ -41,12 +41,34 @@ app.get('/home', (req, res) => {
     res.render('home')
 });
 
+
+// AUTH ROUTES
+
+app.get('/signup', (req, res) => {
+    if(req.user == null){
+        return res.render('register');
+    } else {res.redirect('/')}
+});
+
+app.post('/signup', (req, res) => {
+    var newUser = new User({username: req.body.user});
+    User.register(newUser, req.body.password, (err, user) => {
+        if(err){
+            console.log(err);
+            return res.render('register');
+        }
+        passport.authenticate('local')(req, res, ()=> {
+            res.redirect('/');
+        });
+    });
+});
+
 try {
     var PORT = env.PORT
 } catch (exception){
     PORT = 3000
 }
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () =>{
     console.log(`Listening on port ${PORT}`)
 })
