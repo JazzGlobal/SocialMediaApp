@@ -9,6 +9,7 @@
 
 <% if(user) { %>
     You are logged on!
+    <a class="button" href="/logout">Logout</a>
 <% } else { %>
     <% include ./partials/login.ejs%>
 <%}%>
