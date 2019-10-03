@@ -7,7 +7,9 @@ var mongoose = require('mongoose'),
             unique: true,
             required: true
         },
-        password: String
+        password: String,
+        name: String,
+        memberSince: {type: Date, default: Date()}
     })
 UserSchema.plugin(passportLocalMongoose);
 

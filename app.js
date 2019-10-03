@@ -83,7 +83,7 @@ app.get('/signup', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-    var newUser = new User({username: req.body.username});
+    var newUser = new User({username: req.body.username, name: req.body.name});
     User.register(newUser, req.body.password, (err, user) => {
         if(err){
             console.log(err);
