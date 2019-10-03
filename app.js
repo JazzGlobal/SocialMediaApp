@@ -44,9 +44,13 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/profile', (req, res) => {
+    res.redirect('/profile/1')
+});
+
+app.get('/profile/:pageNumber', (req, res) => {
     if(req.user != null){
         console.log(req.user);
-        res.render('logged_in_profile', {user: req.user});
+        res.render('logged_in_profile', {user: req.user, currentPage: req.params.pageNumber});
     } else { res.redirect('/login') }
 });
 
