@@ -33,8 +33,14 @@
                   </div>
               
                   <div class="navbar-end">
+                    <% if(!passedSessionUser) {%>
                     <div class="navbar-item">
+                      <a class="button is-primary" href="/signup">Signup</a>
                     </div>
+                    <div class="navbar-item">
+                        <a class="button is-primary" href="/login">Login</a>
+                      </div>
+                      <% } %>
                   </div>
                 </div>
               </nav>
