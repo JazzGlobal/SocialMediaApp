@@ -41,8 +41,11 @@ app.get('/home', (req, res) => {
     res.render('home', {user: req.user});
 });
 
-app.get('profile', (req, res) => {
-    res.render('logged_in_profile', {user: req.user});
+app.get('/profile', (req, res) => {
+    if(req.user != null){
+        console.log(req.user);
+        res.render('logged_in_profile', {user: req.user});
+    } else { res.redirect('/login') }
 });
 
 // TODO: Build profiles using new EJS file (front-end only)
