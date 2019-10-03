@@ -41,9 +41,11 @@ app.get('/home', (req, res) => {
     res.render('home', {user: req.user});
 });
 
+app.get('profile', (req, res) => {
+    res.render('logged_in_profile', {user: req.user});
+});
 
 // TODO: Build profiles using new EJS file (front-end only)
-// TODO: Build tweet screen using new EJS file (front-end only)
 // TODO: Implement tweeting (back-end)
 // TODO: Implement profile browsing (back-end)
 
