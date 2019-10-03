@@ -40,7 +40,11 @@
                     <div class="navbar-item">
                         <a class="button is-primary" href="/login">Login</a>
                       </div>
-                      <% } %>
+                      <% } else {%>
+                        <div class="navbar-item">
+                          <a class="button is-primary" href="/logout">Logout</a>
+                        </div>
+                        <% } %>
                   </div>
                 </div>
               </nav>
