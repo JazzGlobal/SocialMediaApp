@@ -12,6 +12,5 @@ var mongoose = require('mongoose'),
         },
         replies: {type: [String], default: [String]}, // String Array
     })
-FweetSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("Fweet", FweetSchema);
