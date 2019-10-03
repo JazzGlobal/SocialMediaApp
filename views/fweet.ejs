@@ -1,23 +1,36 @@
 <% include ./partials/header%>
 
-<form action="/fweet" method="POST">
-    <div class="container">
-        <div class="field">
-            <label class="label">Subject</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Text input" value="bulma">
+<div class="container">
+
+<div class="columns">
+  <div class="column"></div>
+  <div class="column">
+
+      <form action="/fweet" method="POST">
+        <div class="container">
+            <div class="field">
+                <label class="label">Subject</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input" value="bulma">
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <label class="label">Message</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Textarea"></textarea>
+            <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Textarea"></textarea>
+                </div>
+              </div>
+              <div class="control">
+                <button class="button is-primary">Fweet</button>
+              </div>    
             </div>
-          </div>
-          <div class="control">
-            <button class="button is-primary">Fweet</button>
-          </div>    
-        </div>
-</form>
+    </form>
+
+  </div>
+  <div class="column"></div>
+
+</div>
+
+</div>
 
 <% include ./partials/footer%>
