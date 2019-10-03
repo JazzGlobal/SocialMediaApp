@@ -4,6 +4,7 @@ var express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     User = require('./models/user'),
+    Fweet = require('./models/fweet'),
     app = express()
 
 // MONGOOSE CONFIG
@@ -57,6 +58,23 @@ app.get('/profile', (req, res) => {
 
 app.get('/fweet', (req, res) => {
     res.render('fweet');
+});
+
+app.post('/fweet', (req, res) => {
+    // Add fweet to current logged in users list of fweets 
+    var newFweet = Fweet({subject: req.body.subject, message: req.body.message});
+    User.findById(req.user._id, function(err, foundUser) {
+        if(err){
+            console.log(err);
+            res.redirect('/logout');
+        } else {
+            console.log(newFweet);
+            console.log(req.user);
+            foundUser.fweets.push(newFweet);
+            foundUser.save();
+        }
+    });
+    res.redirect('/profile');
 });
 
 // AUTH ROUTES
