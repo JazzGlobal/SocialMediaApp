@@ -54,8 +54,6 @@ app.get('/profile/:pageNumber', (req, res) => {
     } else { res.redirect('/login') }
 });
 
-// TODO: Convert logged_in_profile's card to partial
-// TODO: Implement tweeting (back-end)
 // TODO: Implement profile browsing (back-end)
 
 //TEST ROUTES
