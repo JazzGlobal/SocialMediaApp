@@ -61,7 +61,12 @@ app.get('/profile', (req, res) => {
 app.get('/profile/:pageNumber', (req, res) => {
     if(req.user != null){
         console.log(req.user);
-        res.render('logged_in_profile', {user: req.user, currentPage: req.params.pageNumber});
+        User.findById(req.user._id, (err, foundUser) => {
+            if(err){
+                console.log(err);
+                res.redirect('/');
+            } else { res.render('logged_in_profile', {user: foundUser, currentPage: req.params.pageNumber});}
+        });
     } else { res.redirect('/login') }
 });
 //======
