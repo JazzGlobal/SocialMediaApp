@@ -10,6 +10,7 @@ var mongoose = require('mongoose'),
             type: String,
             required: true
         },
+        postedOn: {type: Date, default: Date()},
         replies: {type: [String], default: [String]}, // String Array
     })
 
