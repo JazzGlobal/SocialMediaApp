@@ -67,16 +67,18 @@ app.get('/user/:username', (req, res) => {
     res.redirect(`/user/${req.params.username}/1`);   
 });
 
-app.get('/user/:username/:pageNumber', (req, res) =>{
-    User.findOne({username: req.params.username}, (err, foundUser) => {
-        if(err){
-            console.log(err);
-            res.redirect('/');
-        } else {
-            console.log(foundUser)
-            res.render('view_user', {user: foundUser, currentPage: req.params.pageNumber});
-        }
-    })
+app.get('/user/:username/:pageNumber', (req, res) => {
+    if(req.user != null) {
+        User.findOne({username: req.params.username}, (err, foundUser) => {
+            if(err){
+                console.log(err);
+                res.redirect('/');
+            } else {
+                console.log(foundUser)
+                res.render('view_user', {user: foundUser, currentPage: req.params.pageNumber});
+            }
+        })
+    } else {res.redirect('/')}
 });
 
 // TODO: Implement profile browsing (back-end)
