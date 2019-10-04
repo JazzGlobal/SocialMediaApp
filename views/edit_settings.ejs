@@ -1,0 +1,86 @@
+<% include ./partials/header %>
+
+<div class="container">
+
+    <div class="columns">
+        <div class="column"></div>
+
+        <div class="column">
+            <form action="/edit" method="POST">
+                <div class="columns">
+                  <div class="column">
+                    <h2 class="title is-3 has-text-centered">EDIT</h2>
+                    <p class="subtitle is-5 has-text-centered">Configure Personal Settings</p>
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column">
+          
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                        <label class="active" for="user_name">Username</label>
+                      <div class="control">
+                          <input id="user_name" class="input" name="username" type="text" value="<%=user.username%>">
+                      </div>
+                    </div>
+        
+                  </div>
+                  <div class="column">
+          
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column">
+          
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                        <label class="active" for="name">Name</label>
+                        <div class="control">
+                            <input id="name" class="input" name="name" type="text" value="<%=user.name%>">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="column">
+          
+                  </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column">
+            
+                    </div>
+                    <div class="column">
+                      <div class="field">
+                          <label class="active" for="biography">Biography</label>
+                          <div class="control">
+                              <textarea id="biography" name="biography" value="<%=user.name%>"></textarea>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="column">
+            
+                    </div>
+                  </div>
+
+                <div class="columns">
+                  <div class="column">
+          
+                  </div>
+                  <div class="">
+                    <button class="button is-primary" type="submit" name="update">Update</button>
+                    <a class="button is-primary" href="/profile" name="cancel">Cancel</a>
+                  </div>
+                  <div class="column">
+          
+                  </div>
+                </div>
+              </form>        </div>
+
+        <div class="column"></div>
+    </div>
+
+</div>
+
+<% include ./partials/footer %>

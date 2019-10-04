@@ -69,6 +69,46 @@ app.get('/profile/:pageNumber', (req, res) => {
 //======
 
 
+//======
+//START OF EDIT_SETTINGS ROUTES
+//======
+
+app.get('/edit', (req, res) =>{
+    if(req.user != null){
+        res.render('edit_settings', {user: req.user})
+    } else {res.redirect('/')}
+});
+
+app.post('/edit', (req, res) => {
+    if(req.user != null){
+        var userName = req.body.username;
+        var name = req.body.name;
+        User.findByIdAndUpdate(req.user._id, {username: userName, name: name}, (err, foundUser) =>{
+            if(err){
+                console.log(err);
+                res.redirect('/');
+            } else {
+                foundUser.save((err) =>{
+                    if(err){
+                        console.log(err);
+                    }else {
+                        req.logIn(req.user, function(err){
+                            if(err){
+                                console.log(err)
+                            } else {
+                                res.redirect('/profile');
+                            }
+                        })
+                    }
+                })
+            }
+        });
+    } else {res.redirect('/')}
+});
+
+//======
+//END OF EDIT_SETTINGS ROUTES
+//======
 
 //======
 //START OF SEARCH FOR USER ROUTES
