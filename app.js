@@ -81,8 +81,6 @@ app.get('/user/:username/:pageNumber', (req, res) => {
     } else {res.redirect('/')}
 });
 
-// TODO: Implement profile browsing (back-end)
-
 //TEST ROUTES
 
 app.get('/fweet', (req, res) => {
