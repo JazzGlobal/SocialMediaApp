@@ -54,6 +54,31 @@ app.get('/profile/:pageNumber', (req, res) => {
     } else { res.redirect('/login') }
 });
 
+app.get('/user/:username', (req, res) => {
+    // User.findOne({username: req.params.username}, (err, foundUser) => {
+    //     if(err){
+    //         console.log(err);
+    //         res.redirect('/');
+    //     } else {
+    //         console.log(foundUser)
+    //         res.render('view_user', {user: foundUser});
+    //     }
+    // })
+    res.redirect(`/user/${req.params.username}/1`);   
+});
+
+app.get('/user/:username/:pageNumber', (req, res) =>{
+    User.findOne({username: req.params.username}, (err, foundUser) => {
+        if(err){
+            console.log(err);
+            res.redirect('/');
+        } else {
+            console.log(foundUser)
+            res.render('view_user', {user: foundUser, currentPage: req.params.pageNumber});
+        }
+    })
+});
+
 // TODO: Implement profile browsing (back-end)
 
 //TEST ROUTES
