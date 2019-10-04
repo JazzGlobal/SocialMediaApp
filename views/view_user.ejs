@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+Profile for: <%=user.username%>
+
+
+<div class="container"> 
+    <div class="columns">
+        <div class="column is-7 has-text-centered">
+            <%- include('./partials/profile.ejs', {user: user}); %>
+        </div>
+        <div class="column is-5 has-text-centered">
+
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
