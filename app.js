@@ -87,7 +87,9 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    return res.render('login');
+    if(req.user == null){
+        return res.render('login');
+    } else {res.redirect('/profile')}
 });
 
 
