@@ -55,15 +55,6 @@ app.get('/profile/:pageNumber', (req, res) => {
 });
 
 app.get('/user/:username', (req, res) => {
-    // User.findOne({username: req.params.username}, (err, foundUser) => {
-    //     if(err){
-    //         console.log(err);
-    //         res.redirect('/');
-    //     } else {
-    //         console.log(foundUser)
-    //         res.render('view_user', {user: foundUser});
-    //     }
-    // })
     res.redirect(`/user/${req.params.username}/1`);   
 });
 
