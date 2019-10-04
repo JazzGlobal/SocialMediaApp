@@ -24,10 +24,9 @@
             </div>
           </div>
           <% var lastPage = currentPage - 1 %>
-          <% var reversedFweets = user.fweets.reverse() %>
-          <% for (var currentFweet = lastPage * 10; currentFweet < currentPage * 10; currentFweet++) { %>          
+          <% for (var currentFweet = currentPage * 10; currentFweet >= lastPage * 10; currentFweet--) { %>          
             <% if (currentFweet < user.fweets.length) {%>             
-              <%- include('./partials/fweet.ejs', {fweet: reversedFweets[currentFweet]}); %>
+              <%- include('./partials/fweet.ejs', {fweet: user.fweets[currentFweet]}); %>
               <%}%>
           <% } %>
 </div>
