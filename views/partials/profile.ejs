@@ -26,8 +26,8 @@
           <% var lastPage = currentPage - 1 %>
           <% var reversedFweets = user.fweets.reverse() %>
           <% for (var currentFweet = lastPage * 10; currentFweet < currentPage * 10; currentFweet++) { %>          
-            <% if (currentFweet < user.fweets.length) {%>
-              <h2 class="title is-2"><%=reversedFweets[currentFweet]['subject']%></h2>
+            <% if (currentFweet < user.fweets.length) {%>             
+              <%- include('./partials/fweet.ejs', {fweet: reversedFweets[currentFweet]}); %>
               <%}%>
           <% } %>
 </div>
