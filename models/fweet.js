@@ -1,6 +1,4 @@
-var mongoose = require('mongoose'),
-    passportLocalMongoose = require('passport-local-mongoose');
-
+var mongoose = require('mongoose')
     var FweetSchema = new mongoose.Schema({
         subject:{
             type: String,
