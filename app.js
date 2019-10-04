@@ -83,7 +83,8 @@ app.post('/edit', (req, res) => {
     if(req.user != null){
         var userName = req.body.username;
         var name = req.body.name;
-        User.findByIdAndUpdate(req.user._id, {username: userName, name: name}, (err, foundUser) =>{
+        var biography = req.body.biography;
+        User.findByIdAndUpdate(req.user._id, {username: userName, name: name, biography: biography}, (err, foundUser) =>{
             if(err){
                 console.log(err);
                 res.redirect('/');

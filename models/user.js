@@ -19,11 +19,19 @@ var mongoose = require('mongoose'),
     var UserSchema = new mongoose.Schema({
         username:{
             type: String,
+            max: 15,
             unique: true,
             required: true
         },
         password: String,
-        name: String,
+        name: {
+            type: String,
+            max: 15
+        },
+        biography: {
+            type: String,
+            max: 150
+        },
         memberSince: {type: Date, default: Date()},
         fweets: {type: [FweetSchema]}
     })
