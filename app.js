@@ -35,6 +35,10 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+
+//======
+//START OF HOME ROUTES
+//======
 app.get('/', (req, res) => {
     res.redirect('/home');
 });
@@ -42,7 +46,14 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
     res.render('home', {user: req.user});
 });
+//======
+//END OF HOME ROUTES
+//======
 
+
+//======
+//START OF LOGGED_IN_PROFILE ROUTES
+//======
 app.get('/profile', (req, res) => {
     res.redirect('/profile/1')
 });
@@ -53,7 +64,15 @@ app.get('/profile/:pageNumber', (req, res) => {
         res.render('logged_in_profile', {user: req.user, currentPage: req.params.pageNumber});
     } else { res.redirect('/login') }
 });
+//======
+//END OF LOGGED_IN_PROFILE ROUTES
+//======
 
+
+
+//======
+//START OF SEARCH FOR USER ROUTES
+//======
 app.get('/user', (req, res) => {
     var username = req.query.username;
     res.redirect(`/user/${username}`);
@@ -76,9 +95,13 @@ app.get('/user/:username/:pageNumber', (req, res) => {
         })
     } else {res.redirect('/')}
 });
+//======
+//END OF SEARCH FOR USER ROUTES
+//======
 
-//TEST ROUTES
-
+//======
+//START OF FWEET DRAFTING ROUTES
+//======
 app.get('/fweet', (req, res) => {
     res.render('fweet');
 });
@@ -99,9 +122,13 @@ app.post('/fweet', (req, res) => {
     });
     res.redirect('/profile');
 });
+//======
+//END OF FWEET DRAFTING ROUTES
+//======
 
-// AUTH ROUTES
-
+//======
+//START OF AUTH ROUTES
+//======
 app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
@@ -137,6 +164,10 @@ app.post('/signup', (req, res) => {
         });
     });
 });
+//======
+//END OF AUTH ROUTES
+//======
+
 
 try {
     var PORT = env.PORT
