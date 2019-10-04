@@ -54,6 +54,11 @@ app.get('/profile/:pageNumber', (req, res) => {
     } else { res.redirect('/login') }
 });
 
+app.get('/user', (req, res) => {
+    var username = req.query.username;
+    res.redirect(`/user/${username}`);
+});
+
 app.get('/user/:username', (req, res) => {
     res.redirect(`/user/${req.params.username}/1`);   
 });
@@ -61,7 +66,7 @@ app.get('/user/:username', (req, res) => {
 app.get('/user/:username/:pageNumber', (req, res) => {
     if(req.user != null) {
         User.findOne({username: req.params.username}, (err, foundUser) => {
-            if(err){
+            if(err || foundUser == null){
                 console.log(err);
                 res.redirect('/');
             } else {

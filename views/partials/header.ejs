@@ -32,12 +32,12 @@
                       Profile
                     </a>
                     <%if(passedSessionUser) {%>
-                    <form id="searchForm" action="/" method="GET">
+                    <form id="searchForm" action="/user" method="GET">
                         <div class="navbar-item">
-                            <input type="text" class="input" placeholder="Search by username">
+                            <input type="text" class="input" name="username" id="username" placeholder="Search by username">
                         </div>
                         <div class=navbar-item>
-                            <button disabled class="button" type="submit">Search</button>
+                            <button class="button" type="submit">Search</button>
                           </div>
                       </form>
                       <% } %>
