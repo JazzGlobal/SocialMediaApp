@@ -154,7 +154,7 @@ app.get('/fweet', (req, res) => {
 
 app.post('/fweet', (req, res) => {
     // Add fweet to current logged in users list of fweets 
-    var newFweet = Fweet({subject: req.body.subject, message: req.body.message});
+    var newFweet = Fweet({subject: req.body.subject, message: req.body.message, owner: req.user._id});
     User.findById(req.user._id, function(err, foundUser) {
         if(err){
             console.log(err);
