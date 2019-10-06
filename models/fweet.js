@@ -1,4 +1,8 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose'),
+    User = require('./user');
+    var Schema = mongoose.Schema;
+    ObjectId = Schema.ObjectId;
+    
     var FweetSchema = new mongoose.Schema({
         subject:{
             type: String,
@@ -9,7 +13,8 @@ var mongoose = require('mongoose')
             required: true
         },
         postedOn: {type: Date, default: Date()},
-        replies: {type: [String], default: [String]}, // String Array
+        owner: ObjectId,
+        replies: {type: [this]} // String Array
     })
 
 module.exports = mongoose.model("Fweet", FweetSchema);

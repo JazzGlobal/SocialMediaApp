@@ -33,7 +33,8 @@ var mongoose = require('mongoose'),
             max: 150
         },
         memberSince: {type: Date, default: Date()},
-        fweets: {type: [FweetSchema]}
+        fweets: {type: [FweetSchema]},
+        likedFweets: {type: [FweetSchema]}
     })
 UserSchema.plugin(passportLocalMongoose);
 
