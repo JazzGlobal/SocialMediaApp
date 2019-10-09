@@ -100,7 +100,7 @@ app.post('/edit', (req, res) => {
                     }else {
                         req.logIn(req.user, function(err){
                             if(err){
-                                console.log(err)
+                                console6.log(err)
                             } else {
                                 res.redirect('/profile');
                             }
@@ -146,6 +146,14 @@ app.get('/user/:username/:pageNumber', (req, res) => {
 //======
 
 //======
+//START OF VIEW TWEET ROUTES
+//======
+
+//======
+//END OF VIEW FWEET ROUTES
+//======
+
+//======
 //START OF FWEET DRAFTING ROUTES
 //======
 app.get('/fweet', (req, res) => {
@@ -168,6 +176,7 @@ app.post('/fweet', (req, res) => {
     });
     res.redirect('/profile');
 });
+
 //======
 //END OF FWEET DRAFTING ROUTES
 //======
