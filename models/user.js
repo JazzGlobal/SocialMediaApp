@@ -1,6 +1,8 @@
 var mongoose = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose'),
     Fweet = require('./fweet');
+    var Schema = mongoose.Schema;
+    ObjectId = Schema.ObjectId;
     
     var FweetSchema = new mongoose.Schema({
         subject:{
@@ -12,7 +14,8 @@ var mongoose = require('mongoose'),
             required: true
         },
         postedOn: {type: Date, default: Date()},
-        replies: {type: [String], default: [String]}, // String Array
+        owner: ObjectId,
+        replies: {type: [this]} // String Array
     })
 
 
