@@ -9,7 +9,7 @@ var express = require('express'),
 
 // MONGOOSE CONFIG
 // mongoose.connect(process.env.MONGOD_URI || 'mongodb+srv://jazzglobal:Coolkids1478!@cluster0-cvxgu.mongodb.net/social_media_app?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
-mongoose.connect('mongodb://localhost:27017/fwitter')
+mongoose.connect('mongodb://localhost:27017/fwitter', {useNewUrlParser: true, useUnifiedTopology: true})
 //PASSPORT CONFIG
 passport.serializeUser((user,done)=>{
     done(null,user);
