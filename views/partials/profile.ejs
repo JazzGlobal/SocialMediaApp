@@ -23,7 +23,7 @@
           <% var lastPage = currentPage - 1 %>
           <% for (var currentFweet = currentPage * 10; currentFweet >= lastPage * 10; currentFweet--) { %>          
             <% if (currentFweet < user.fweets.length) {%>             
-              <%- include('./fweet.ejs', {fweet: user.fweets[currentFweet]}); %>
+              <%- include('./view_fweet.ejs', {fweet: user.fweets[currentFweet]}); %>
               <%}%>
           <% } %>
 </div>
