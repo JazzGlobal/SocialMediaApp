@@ -1,3 +1,10 @@
+// TODO: Need to create a way to pass the index of the fweet that is to be replied to to the reply route. 
+//       This allows us the post to the correct fweet. Because of the implementation of the fweets (Inside the user object),
+//       it is impossible to query the database for a unique fweet by _id. 
+//      
+//       Write an API file that queries the user (Fweet.owner returns the user id of the poster), and then query then iterate over the fweets object inside the user,
+//       Then match by the fweet ID. Return the fweet index. 
+
 var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
