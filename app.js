@@ -146,7 +146,7 @@ app.get('/user/:username/:pageNumber', (req, res) => {
 //======
 
 //======
-//START OF FWEET DRAFTING ROUTES
+//START OF FWEET ROUTES
 //======
 app.get('/fweet', (req, res) => {
     res.render('fweet');
@@ -170,7 +170,7 @@ app.post('/fweet', (req, res) => {
 });
 
 //======
-//END OF FWEET DRAFTING ROUTES
+//END OF FWEET ROUTES
 //======
 
 //======
