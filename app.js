@@ -146,14 +146,6 @@ app.get('/user/:username/:pageNumber', (req, res) => {
 //======
 
 //======
-//START OF VIEW TWEET ROUTES
-//======
-
-//======
-//END OF VIEW FWEET ROUTES
-//======
-
-//======
 //START OF FWEET DRAFTING ROUTES
 //======
 app.get('/fweet', (req, res) => {
